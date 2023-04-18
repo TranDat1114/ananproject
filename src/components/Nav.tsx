@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BsChevronUp, BsChevronDown } from "react-icons/bs";
 import { HiViewList } from "react-icons/hi";
+import { Link } from "react-router-dom";
 interface NavLink {
     type: string;
     name: string;
@@ -72,9 +73,9 @@ const Nav = () => {
                     {navLink.map((p, index) => (
                         <li key={index} className="p-2">
                             {p.type === "navLink" ? (
-                                <a className="btn" href={p.link}>
+                                <Link className="btn" to={p.link}>
                                     {p.name}
-                                </a>
+                                </Link>
                             ) : (
                                 <div className="relative parrent-nav">
                                     <button className="btn flex flex-row justify-between items-center">
@@ -84,12 +85,12 @@ const Nav = () => {
                                     <ul className="children-nav lg:absolute hidden bg-white shadow lg:w-max">
                                         {p.children?.map((c, index) => (
                                             <li key={index}>
-                                                <a
-                                                    href="#"
+                                                <Link
+                                                    to="#"
                                                     className="block px-4 py-2 hover:bg-pink-200"
                                                 >
                                                     {c}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>
