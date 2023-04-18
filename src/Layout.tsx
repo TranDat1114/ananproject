@@ -25,7 +25,7 @@ const Layout = ({ children }: Props) => {
                             <div className="text-gray-300">
                                 <p className="text-xs">
                                     Địa chỉ: Tầng 1, FPT Polytechnic Tòa nhà F,
-                                    Tân Hưng Thuận, Quận 12, Thành phố Hồ Chí
+                                    Tân Chánh Hiệp, Quận 12, Thành phố Hồ Chí
                                     Minh
                                 </p>
                                 <p className="text-xs">Hotline:</p>
