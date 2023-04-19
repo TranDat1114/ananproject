@@ -111,7 +111,7 @@ const DoiTac = () => {
                                         <p className="text-xs text-gray-500 cursor-pointer">
                                             {p.slogan}
                                         </p>
-                                        <a href="#" className="text-md text-blue-500" ><small>Xem chi tiết...</small></a>
+                                        <a href="/" className="text-md text-blue-500" ><small>Xem chi tiết...</small></a>
                                     </div>
                                 </div>
                             ))}
@@ -148,7 +148,7 @@ const DoiTac = () => {
                                             alt=""
                                         />
                                         <div className="p-4">
-                                            <p className="font-semibold text-base">
+                                            <p className="text-lg font-semibold hover:text-pink-600">
                                                 {p.TenHoatDong}
                                             </p>
                                             <div className="flex flex-row justify-between items-center mt-4">
