@@ -153,7 +153,7 @@ const DoiTac = () => {
                                             </p>
                                             <div className="flex flex-row justify-between items-center mt-4">
                                                 <div className="rounded-[50%] border-2 shadow-md border-red-200">
-                                                    <div className="w-10            h-10 ">
+                                                    <div className="w-10 h-10 ">
                                                         <img
                                                             className="object-contain w-10 h-10"
                                                             src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg5.thuthuatphanmem.vn%2Fuploads%2F2022%2F01%2F16%2Flogo-fpt-fpt-polytechnic-tach-nen_043151201.png"
