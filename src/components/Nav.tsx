@@ -43,8 +43,14 @@ const Nav = () => {
             link: "/tintuc",
         },
         {
-            type: "navLink",
+            type: "parrent",
             name: "Blog đời sống",
+            children: [
+                "Sống tốt",
+                "Sống khỏe",
+                "Sống thông minh",
+                "Sống vui"
+            ],
             link: "/blogdoisong",
         },
     ];
@@ -65,9 +71,8 @@ const Nav = () => {
                 </button>
             </div>
             <div
-                className={`${
-                    openNav ? " opacity-0 hidden" : "  opacity-100"
-                }  mt-5 lg:mt-0 transition-opacity duration-300 ease-in-out`}
+                className={`${openNav ? " opacity-0 hidden" : "  opacity-100"
+                    }  mt-5 lg:mt-0 transition-opacity duration-300 ease-in-out`}
             >
                 <ul className=" lg:flex lg: items-center gap-3">
                     {navLink.map((p, index) => (
