@@ -86,7 +86,7 @@ const Layout = ({ children }: Props) => {
                                 </li>
                                 <li>
                                     <span>Email: </span>
-                                    <a href="" className="inline font-bold text-white hover:text-pink-500"> dotnetuniverse17@hmail.com</a>
+                                    <a href="" className="inline font-bold text-white hover:text-pink-500"> dotnetuniverse17@gmail.com</a>
                                 </li>
                                 <li>
                                     <span>Tổng đài gọi ra: </span>
