@@ -1,69 +1,96 @@
 import axios, { AxiosResponse } from "axios";
 import { createContext, useEffect, useReducer, useState } from "react";
 
-interface HoatDong {
-    tenHoatDong: string;
-    tenDoiTac: string;
-    hinhanhDoiTac: string;
-    luotQuyenGop: string;
-    soTienHienTai: number;
-    soTienCan: number;
-    ngayKetThuc: Date;
+export interface HoatDong {
+    projectId: number;
+    name: string;
+    description: string;
+    startDate: Date;
+    endDate: Date;
+    targetAmount: number;
+    currentAmount: number;
+    userId: number;
+    user: User;
+    donations: Donation[];
 }
-interface ProductState {
-    products: HoatDong[];
+
+export interface Donation {
+    donationId: number;
+    amount: number;
+    donationDate: Date;
+    userId: number;
+    projectId: number;
+    user: null;
+    project: null;
+}
+
+export interface User {
+    id: number;
+    userName: string;
+    email: string;
+    address: string;
+    password: string;
+    phoneNumber: string;
+    accountRoleId: number;
+    accountRole: null;
+    donations: null;
+    projects: null;
+}
+
+interface HoatDongState {
+    hoatDongs: HoatDong[];
     loading: boolean;
     error: string | null;
 }
 
-const initialState: ProductState = {
-    products: [],
+const initialState: HoatDongState = {
+    hoatDongs: [],
     loading: false,
     error: null,
 };
 
-enum ProductActionTypes {
+enum HoatDongActionTypes {
     FETCH_PRODUCTS_REQUEST = "FETCH_PRODUCTS_REQUEST",
     FETCH_PRODUCTS_SUCCESS = "FETCH_PRODUCTS_SUCCESS",
     FETCH_PRODUCTS_FAILURE = "FETCH_PRODUCTS_FAILURE",
 }
 
-interface FetchProductsRequestAction {
-    type: ProductActionTypes.FETCH_PRODUCTS_REQUEST;
+interface FetchHoatDongsRequestAction {
+    type: HoatDongActionTypes.FETCH_PRODUCTS_REQUEST;
 }
 
-interface FetchProductsSuccessAction {
-    type: ProductActionTypes.FETCH_PRODUCTS_SUCCESS;
+interface FetchHoatDongsSuccessAction {
+    type: HoatDongActionTypes.FETCH_PRODUCTS_SUCCESS;
     payload: HoatDong[];
 }
 
-interface FetchProductsFailureAction {
-    type: ProductActionTypes.FETCH_PRODUCTS_FAILURE;
+interface FetchHoatDongsFailureAction {
+    type: HoatDongActionTypes.FETCH_PRODUCTS_FAILURE;
     payload: string;
 }
 
-type ProductAction =
-    | FetchProductsRequestAction
-    | FetchProductsSuccessAction
-    | FetchProductsFailureAction;
+type HoatDongAction =
+    | FetchHoatDongsRequestAction
+    | FetchHoatDongsSuccessAction
+    | FetchHoatDongsFailureAction;
 
 const HoatDongReducer = (
-    state: ProductState,
-    action: ProductAction
-): ProductState => {
+    state: HoatDongState,
+    action: HoatDongAction
+): HoatDongState => {
     switch (action.type) {
-        case ProductActionTypes.FETCH_PRODUCTS_REQUEST:
+        case HoatDongActionTypes.FETCH_PRODUCTS_REQUEST:
             return {
                 ...state,
                 loading: true,
             };
-        case ProductActionTypes.FETCH_PRODUCTS_SUCCESS:
+        case HoatDongActionTypes.FETCH_PRODUCTS_SUCCESS:
             return {
                 ...state,
-                products: action.payload,
+                hoatDongs: action.payload,
                 loading: false,
             };
-        case ProductActionTypes.FETCH_PRODUCTS_FAILURE:
+        case HoatDongActionTypes.FETCH_PRODUCTS_FAILURE:
             return {
                 ...state,
                 error: action.payload,
@@ -74,9 +101,9 @@ const HoatDongReducer = (
     }
 };
 
-export const ProductContext = createContext<{
-    state: ProductState;
-    dispatch: React.Dispatch<ProductAction>;
+export const HoatDongContext = createContext<{
+    state: HoatDongState;
+    dispatch: React.Dispatch<HoatDongAction>;
 }>({
     state: initialState,
     dispatch: () => null,
@@ -87,43 +114,35 @@ interface Props {
 const HoatDongProvider = ({ children }: Props) => {
     const [state, dispatch] = useReducer(HoatDongReducer, initialState);
 
-    const [products, setProducts] = useState<HoatDong[]>([]);
+    const [hoatDongs, setHoatDongs] = useState<HoatDong[]>([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response: AxiosResponse<HoatDong[]> = await axios.get(
-                `http://localhost:5006/Product`
-            );
-            setProducts(response.data);
-        };
-        fetchData();
-    }, []);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            dispatch({ type: ProductActionTypes.FETCH_PRODUCTS_REQUEST });
+        const fetchHoatDongs = async () => {
+            dispatch({ type: HoatDongActionTypes.FETCH_PRODUCTS_REQUEST });
             try {
                 const response = await axios.get<HoatDong[]>(
-                    "http://localhost:5006/HoatDong"
+                    "https://localhost:7142/api/Projects"
                 );
+                setHoatDongs(response.data);
+                console.log(response.data);
                 dispatch({
-                    type: ProductActionTypes.FETCH_PRODUCTS_SUCCESS,
+                    type: HoatDongActionTypes.FETCH_PRODUCTS_SUCCESS,
                     payload: response.data,
                 });
             } catch (error) {
                 dispatch({
-                    type: ProductActionTypes.FETCH_PRODUCTS_FAILURE,
+                    type: HoatDongActionTypes.FETCH_PRODUCTS_FAILURE,
                     payload: "Lỗi",
                 });
             }
         };
-        fetchProducts();
+        fetchHoatDongs();
     }, []);
 
     return (
-        <ProductContext.Provider value={{ state, dispatch }}>
+        <HoatDongContext.Provider value={{ state, dispatch }}>
             {children}
-        </ProductContext.Provider>
+        </HoatDongContext.Provider>
     );
 };
 

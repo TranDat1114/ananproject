@@ -51,12 +51,12 @@ const Nav = () => {
     return (
         <nav className="container m-auto px-4 py-2 bg-white  lg:flex lg:items-center lg:justify-between">
             <div className="flex flex-row justify-between items-center">
-                <a href="/trangchu">
+                <Link to="/">
                     <span>
                         <p className="text-blue-500 text-2xl">ANNAN</p>
                         <p className="text-pink-500 ">Ví Nhân ái</p>
                     </span>
-                </a>
+                </Link>
                 <button
                     className="cursor-pointer lg:hidden bg-blue-500  text-white py-2 px-4 rounded-lg text-2xl"
                     onClick={() => setOpenNav(!openNav)}
