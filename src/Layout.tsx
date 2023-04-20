@@ -97,8 +97,8 @@ const Layout = ({ children }: Props) => {
                             </ul>
                         </div>
                     </div>
-                    <div className="py-5 flex flex-row justify-between items-center">
-                        <div className="flex flex-row justify-between items-center">
+                    <div className="py-4 flex flex-row justify-around items-center border-t border-white/10">
+                        <div className="flex flex-row justify-around items-center">
                             <span>
                                 <p className="text-blue-500 text-2xl">ANNAN</p>
                                 <p className="text-pink-500">Ví Nhân ái</p>
