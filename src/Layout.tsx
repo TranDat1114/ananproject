@@ -13,7 +13,7 @@ const Layout = ({ children }: Props) => {
             <main className="py-5 min-h-screen">{children}</main>
             <footer className="w-full shadow bg-[#242424] text-white">
                 <div className="container m-auto ">
-                    <div className="grid py-5 grid-cols-3 grid-flow-col">
+                    <div className="grid py-5 grid-cols-1 lg:grid-cols-1 grid-flow-col">
                         <div className="col-span-2 flex flex-row justify-evenly items-center  text-sm ">
                             <ul className="lg:flex lg:items-start lg:space-x-8">
                                 <li>
