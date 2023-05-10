@@ -97,7 +97,7 @@ const DoiTac = () => {
                         </p>
                         <div className="grid  lg:grid-cols-2 grid-cols-1 gap-3">
                             {doiTac.map((p, index) => (
-                                <div className="col-span-1 flex flex-row gap-4 items-center border hover:shadow-xl p-3 h-24"
+                                <div className="col-span-1 flex flex-row gap-4 items-center border hover:shadow-xl p-3 h-28"
                                     key={index}>
                                     <img
                                         className="rounded-xl object-cover h-10 w-10"
