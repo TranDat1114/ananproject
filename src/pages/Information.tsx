@@ -18,7 +18,7 @@ const Information = () => {
                                     src="https://static.mservice.io/blogscontents/momo-upload-api-230321162303-638150125831746329.jpg"
                                     alt="img"
                                 />
-                                <p className="text-xs text-gray-300">
+                                <p className="text-xs text-gray-600">
                                     21/03/2023
                                 </p>
                                 <p className="text-base hover:underline cursor-pointer">
@@ -32,7 +32,7 @@ const Information = () => {
                                     src="https://static.mservice.io/blogscontents/momo-upload-api-230321162303-638150125831746329.jpg"
                                     alt="img"
                                 />
-                                <p className="text-xs text-gray-300">
+                                <p className="text-xs text-gray-600">
                                     21/03/2023
                                 </p>
                                 <p className="text-base hover:underline cursor-pointer">
@@ -47,7 +47,7 @@ const Information = () => {
                                     alt="img"
                                 />
 
-                                <p className="text-xs text-gray-300">
+                                <p className="text-xs text-gray-600">
                                     21/03/2023
                                 </p>
                                 <p className="text-base hover:underline cursor-pointer">
