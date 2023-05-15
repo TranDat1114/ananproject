@@ -141,7 +141,7 @@ const Home = () => {
                     items-center text-center flex-nowrap py-4"
                     >
                         <a
-                            className="rounded-full border border-pink-500 py-1 pl-4 pr-6 text-pink-500 transition-all hover:bg-pink-50 hover:text-pink-600 flex flex-row items-center flex-nowrap justify-between gap-2"
+                            className="rounded-full border border-pink-500 py-1 pl-4 pr-6 text-pink-500 transition-all hover:bg-pink-300 hover:text-pink-600 flex flex-row items-center flex-nowrap justify-between gap-2"
                             href="#"
                         >
                             <BsArrowDown />
