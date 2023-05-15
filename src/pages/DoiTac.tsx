@@ -9,12 +9,12 @@ const hoanCanh = [
     },
     {
         TenHoatDong: "Cùng Trăng Khuyết giúp chú Hùng tiếp tục sống “cuộc đời thứ 2 tại mái ấm Sài Gòn Bao Dung",
-        NhaDongHanh: "NhaDongHanh",
+        NhaDongHanh: "FPT Polytechnic HCM",
         ThoiGian: "32 days",
     },
     {
         TenHoatDong: "Cùng Trăng Khuyết giúp chú Hùng tiếp tục sống “cuộc đời thứ 2 tại mái ấm Sài Gòn Bao Dung",
-        NhaDongHanh: "NhaDongHanh",
+        NhaDongHanh: "FPT Polytechnic HCM",
         ThoiGian: "32 days",
     },
     {
@@ -105,10 +105,10 @@ const DoiTac = () => {
                                         alt="img"
                                     />
                                     <div className="">
-                                        <p className="text-md font-bold text-pink-500">
+                                        <p className="text-sm font-bold text-pink-500">
                                             {p.title}
                                         </p>
-                                        <p className="text-xs text-gray-500 cursor-pointer">
+                                        <p className="text-sm text-gray-500 cursor-pointer font-medium">
                                             {p.slogan}
                                         </p>
                                         <a href="/" className="text-md text-blue-500" ><small>Xem chi tiết...</small></a>
