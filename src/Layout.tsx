@@ -1,4 +1,4 @@
-import { BsFacebook, BsLinkedin, BsYoutube } from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 import Nav from "./components/Nav";
 interface Props {
     children: React.ReactElement;
@@ -115,9 +115,9 @@ const Layout = ({ children }: Props) => {
 
                                 <a
                                     href="#"
-                                    className="text-[#0e76a8] bg-pink-50 p-2 rounded-[50%]"
+                                    className="text-[#c13c49] bg-pink-50 p-2 rounded-[50%]"
                                 >
-                                    <BsLinkedin />
+                                    <BsInstagram />
                                 </a>
                                 <a
                                     href="#"
